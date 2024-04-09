@@ -23,6 +23,8 @@
         message: message
       }
 
+      try{
+
       const response = await fetch("/api/getimage", {
         method: "post",
         headers: {
@@ -34,6 +36,15 @@
       const data = await response.json()
 
       return data
+
+      }catch(e){
+        console.error(e)
+        const error = {
+          url: "https://learn.microsoft.com/ja-jp/windows/win32/uxguide/images/mess-error-image15.png",
+          prompt: e
+        }
+        return error
+      }
     }
 
     async function postRequest() {

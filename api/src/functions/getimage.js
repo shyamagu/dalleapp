@@ -37,9 +37,9 @@ app.http('getimage', {
         }catch(error){
             const errorimage = {
                 "url": "https://learn.microsoft.com/ja-jp/windows/win32/uxguide/images/mess-error-image15.png",
-                "prompt": "An error occurred in the application: ${error.message}"
+                "prompt": error.message
             }
-            return { status: 501, body: JSON.stringify(errorimage) };
+            return { body: JSON.stringify(errorimage) };
         }
     }
 });

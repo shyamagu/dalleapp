@@ -83,9 +83,9 @@
     <div class="display-field {displayFieldVisible ? 'visible' : ''}">
       {#each images as image, i}
         <div class="image-div">
-          <a href={image.url} target="_blank">
-            <img src={image.url} alt={image.prompt} />
-          </a>
+        <a href={image.url} target="_blank">
+            <img src={image.url} alt={image.prompt} title={image.prompt} />
+        </a>
         </div>
       {/each}
       {#if displayLoading}
